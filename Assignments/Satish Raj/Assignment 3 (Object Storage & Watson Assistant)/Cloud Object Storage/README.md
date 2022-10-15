@@ -1,2 +1,2 @@
 
-![output](./output.jpg)
+![output](./output/output.jpg)
