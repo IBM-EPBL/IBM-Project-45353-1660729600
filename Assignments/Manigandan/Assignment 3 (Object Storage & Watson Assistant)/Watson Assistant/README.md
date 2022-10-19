@@ -1,0 +1,2 @@
+![output](./output.jpg)
+CHATBOT URL: https://web-chat.global.assistant.watson.appdomain.cloud/preview.html?backgroundImageURL=https%3A%2F%2Fjp-tok.assistant.watson.cloud.ibm.com%2Fpublic%2Fimages%2Fupx-fcbf8e08-813e-433f-af7d-38592fcc96e3%3A%3A99329507-f381-4001-b1fe-9d71338569f7&integrationID=cfc63d69-d40c-44e8-ac2d-3f666d9dfec8&region=jp-tok&serviceInstanceID=fcbf8e08-813e-433f-af7d-38592fcc96e3

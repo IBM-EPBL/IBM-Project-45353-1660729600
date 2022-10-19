@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Hospital</title>
+    <style>
+        body {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            background-color: rgb(202, 255, 123);
+            font-size: 1.7rem;
+            color: rgb(25, 52, 0);
+        }
+
+        a {
+            color: rgb(25, 52, 0);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: rgb(0, 29, 1);
+            padding: 5px 20px;
+            background-color: rgb(160, 255, 44);
+            border-radius: 5px;
+            transition: .5s ease-in-out;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <h1>Welcome to Mental Hospital</h1>
+        <a
+            href="https://web-chat.global.assistant.watson.appdomain.cloud/preview.html?backgroundImageURL=https%3A%2F%2Fjp-tok.assistant.watson.cloud.ibm.com%2Fpublic%2Fimages%2Fupx-fcbf8e08-813e-433f-af7d-38592fcc96e3%3A%3A99329507-f381-4001-b1fe-9d71338569f7&integrationID=cfc63d69-d40c-44e8-ac2d-3f666d9dfec8&region=jp-tok&serviceInstanceID=fcbf8e08-813e-433f-af7d-38592fcc96e3">
+            Click Here to Open Chatbot
+        </a>
+    </center>
+    <!-- Embedded Code From Watson Assistant -->
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "cfc63d69-d40c-44e8-ac2d-3f666d9dfec8", // The ID of this integration.
+            region: "jp-tok", // The region your integration is hosted in.
+            serviceInstanceID: "fcbf8e08-813e-433f-af7d-38592fcc96e3", // The ID of your service instance.
+            onLoad: function (instance) {
+                instance.render();
+            }
+        };
+        setTimeout(function () {
+            const t = document.createElement('script');
+            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window
+                .watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
+</body>
+
+</html>
