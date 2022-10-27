@@ -1,0 +1,33 @@
+body {
+    background-color: RGB(237, 29, 36);
+    font-family: 'Marvel', sans-serif;
+    
+}
+
+h1 {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    
+}
+
+p {
+    font-size: 30px;
+    color: aliceblue;
+    
+}
+
+.order img {
+    height: 200px;
+    width: 200px;
+}
+
+.marvel-photos {
+    border-style: solid;
+    border-radius: 15px;
+    border-color: aliceblue;
+    padding: 15px;
+    display: flex;
+    justify-content: space-evenly;
+
+}
