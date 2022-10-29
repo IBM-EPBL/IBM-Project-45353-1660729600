@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body{
+            background-color: rgb(0, 166, 255);
+            color: aliceblue;
+        }
+        h1{
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-size: 5rem;
+        }
+    </style>
+</head>
+<body>
+    <center>
+    <h1>Fitness Pro Clinic</h1>
+</center>
+    <script>
+        window.watsonAssistantChatOptions = {
+          integrationID: "e87b91f8-896b-4fc0-958e-185783a671dc", // The ID of this integration.
+          region: "jp-tok", // The region your integration is hosted in.
+          serviceInstanceID: "7f6ed159-81fe-4da6-b976-ed675830b48b", // The ID of your service instance.
+          onLoad: function(instance) { instance.render(); }
+        };
+        setTimeout(function(){
+          const t=document.createElement('script');
+          t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+          document.head.appendChild(t);
+        });
+      </script>
+</body>
+</html>
