@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>NariKootam Members</title>
+    <style>
+        html {
+            min-height: 100%;
+        }
+
+        body {
+            background: linear-gradient(black, rgb(105, 0, 0)) fixed;
+            height: 100%;
+            color: wheat;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+        }
+
+        .title {
+            margin: 1rem 0 1.5rem 0;
+
+        }
+
+        .title h1 {
+            font-weight: 900;
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .container {
+            width: 60%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-bottom: 2rem;
+        }
+
+        table {
+            border-radius: 1rem;
+        }
+
+        td {
+            padding: 15px 25px;
+            border: 2px solid wheat;
+        }
+
+        tr:hover {
+            background-color: rgb(30, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="title">
+            <h1>NariKootam Members</h1>
+        </div>
+        <table>
+
+            <tbody>
+                {% for member in members %}
+
+                <tr>
+                    <td>{{loop.index}}</td>
+                    <td>{{member['NAME']}}</td>
+                    <td>{{member['EMAIL']}}</td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+
+
+</body>
+
+</html>
