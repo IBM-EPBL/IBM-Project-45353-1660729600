@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>JOBX</title>
+    {% endif %}
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}">
+</head>
+
+<body>
+    <div id="preloader"></div>
+    <!-- NavBar -->
+    <nav>
+        <div class="logo">
+            <h4><a href="{{ url_for('home') }}">JOBX</a></h4>
+        </div>
+        <ul class="nav-links">
+            <!-- Not showing Home button in home -->
+            {% if "Home" in title %}
+            <li></li>
+            {% else %}
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            {% endif %}
+
+            <li><a href="{{ url_for('about') }}">About Us</a></li>
+
+            <!-- Showing Login/Logout button -->
+            {% if session['logged_in'] %}
+            <!-- Logged in -->
+            <li><a href="{{ url_for('profile') }}">{{ session['name'] }}'s Account</a></li>
+            <li><a href="{{ url_for('logout') }}"> <button id="btn">Logout</button></a></li>
+            {% else %}
+            <!-- Not Logged in -->
+            <li><a href="{{ url_for('joinus') }}"> <button id="btn">Join JOBX</button></a></li>
+            {% endif %}
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+    <!-- Message Box -->
+    <div class="msg-box">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for msg in messages %}
+        <p>{{ msg }}</p>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+    </div>
+    {% block content %}
+
+    {% endblock content %}
+
+    <!-- Script for Preloader -->
+    <script>
+        const loader = document.getElementById('preloader')
+        window.addEventListener('load', function () {
+            loader.style.display = "none"
+        })
+    </script>
+    <!-- Script for Navbar -->
+    <script src="{{url_for('static', filename='JS/navbar.js')}}"></script>
+    <!-- Script for chatbot -->
+    <script>
+        window.watsonAssistantChatOptions = {
+            integrationID: "8a1c12e4-59cb-47c6-9190-7822515b0841", // The ID of this integration.
+            region: "jp-tok", // The region your integration is hosted in.
+            serviceInstanceID: "fcbf8e08-813e-433f-af7d-38592fcc96e3", // The ID of your service instance.
+            onLoad: function (instance) {
+                instance.render();
+            }
+        };
+        setTimeout(function () {
+            const t = document.createElement('script');
+            t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window
+                .watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+            document.head.appendChild(t);
+        });
+    </script>
+</body>
+
+</html>

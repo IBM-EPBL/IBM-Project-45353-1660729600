@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>JOBX</title>
+    {% endif %}
+
+    <!-- BootStrap CDN -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script defer src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/joinus.css')}}">
+
+    <!-- Script -->
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script defer src="{{url_for('static',filename='JS/joinus.js')}}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-login">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <a href="#" class="active" id="login-form-link">UPDATE YOUR PROFILE</a>
+
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login-form" action="{{url_for('update')}}" method="post" role="form"
+                                    style="display: block;">
+                                    <div class="form-group">
+                                        <label for="name">Update Your Name</label>
+                                        <input type="text" name="name" id="name" class="form-control" placeholder="Name"
+                                            value="{{dictionary['NAME']}}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Update Your Email</label>
+                                        <input type="text" name="email" id="email" class="form-control"
+                                            placeholder="Email" value="{{dictionary['EMAIL']}}" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="password">Update Your Password</label>
+                                        <input type="text" name="password" class="form-control" placeholder="Password"
+                                            value="{{dictionary['PASSWORD']}}" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="interest-select">Change Your Interest</label>
+                                        <div class="select">
+                                            <select name="interest" id="interest-select" required>
+                                                <option value="{{dictionary['INTERESTS']}}">--NOT SELECTED--</option>
+                                                <option value="programming">Programming Sector</option>
+                                                <option value="non-programming">Non-Programming Sector</option>
+                                                <option value="central-government">Central Government Sector</option>
+                                                <option value="state-government">State Government Sector</option>
+                                                <option value="banking">Banking Sector</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="login-submit" id="login-submit"
+                                                    class="form-control btn btn-login" value="UPDATE">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

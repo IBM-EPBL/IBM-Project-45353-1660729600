@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="card-container">
+
+    <div class="card-items profile-card">
+        <div class="edit-icon"><a href="{{url_for('edit')}}"><i class="fa-solid fa-pen-to-square"></i></a></div>
+        <table>
+            <thead>
+                <th colspan="2">
+                    <h3 class="title">USER PROFILE</h3>
+                </th>
+
+            </thead>
+
+            <tr>
+                <td><label>Name</label> </td>
+                <td>{{ data['NAME'] }}</td>
+            </tr>
+            <tr>
+                <td><label>Email</label> </td>
+                <td>{{ data['EMAIL'] }}</td>
+            </tr>
+            <tr>
+                <td><label>Password</label> </td>
+                <td>{{ data['PASSWORD'] }}</td>
+            </tr>
+            <tr>
+                <td><label>Interest</label> </td>
+                <td>{{ data['INTERESTS'].upper() }}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+{% endblock content %}

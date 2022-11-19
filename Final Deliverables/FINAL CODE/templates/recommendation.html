@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!-- Recommender Section -->
+<h2 class="heading">Recommended Jobs For You, <a href="{{url_for('profile')}}"
+        style="color:rgb(0, 135, 61) ;">{{name}}!</a></h2>
+<div class="card-container">
+
+
+
+    {% for interest,data in job.items() %}
+    {% if user_interest == interest %}
+    <span style="display:none;">{{ random.shuffle(data) }}</span>
+    {% for job in data %}
+    <div class="card-items">
+        <h3 class="job-title">{{job['title']}}</h3>
+        <hr>
+        <p class="job-details">
+            <label>Average Salary: </label>{{job['salary']}}
+        </p>
+        <p class="job-details">
+            {% if interest == 'central-government' or interest == 'state-government' or interest == 'banking' %}
+            <label>Exams: </label>
+            {% else %}
+            <label>Skills: </label>
+            {% endif %}
+
+            {% for skill in job['skills'] %}
+            <span class="tag">{{skill}}</span>
+            {% endfor %}
+        </p>
+        <button><a href="{{job['link']}}" target="_blank">View Job</a></button>
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endfor %}
+
+
+
+
+</div>
+{% endblock content %}

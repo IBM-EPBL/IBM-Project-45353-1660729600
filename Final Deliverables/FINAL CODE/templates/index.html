@@ -1,0 +1,37 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<!-- User Welcome -->
+<div class="text-container">
+    <h1>Confused About Your <span style="color:rgb(165, 0, 0) ;">Career?</span></h1>
+    <p><span class="auto-input"></span></p>
+
+    <!-- Showing JOIN button if not logged in-->
+    {% if session['logged_in'] %}
+    <button id="btn"><a href="{{url_for('recommendation')}}">Your Recommendations</a></button>
+    {% else %}
+    <button id="btn"><a href="{{url_for('joinus')}}">Join JOBX</a></button>
+    {% endif %}
+
+</div>
+
+
+
+
+
+
+<!-- Auto Type Text Script -->
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script>
+    var typed = new Typed(".auto-input", {
+        strings: ["Don't Worry,", "We are here for you ;)", "We Show Who you are?",
+            "We Show Who you could be?"
+        ],
+        typeSpeed: 100,
+        backSpeed: 100,
+        loop: true,
+    });
+</script>
+
+
+{% endblock content %}
