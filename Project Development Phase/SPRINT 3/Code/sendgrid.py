@@ -4,8 +4,8 @@ from sendgrid.helpers.mail import Mail
 
 
 message = Mail(
-    from_email="jobxofficial@gmail.com",
-    to_emails="satishraj0369@gmail.com",
+    from_email="FROM_EMAIL",
+    to_emails="TO_MAIL",
     subject='New SignUp',
     html_content='<p>Hello, Your Registration was successfull. <br><br> Thank you for choosing us.</p>')
 
